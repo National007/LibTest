@@ -1,0 +1,67 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script>
+        $.fn.serializeObject = function () {
+            var o = {};
+            var a = this.serializeArray();
+            $.each(a, function () {
+                if (o[this.name]) {
+                    if (!o[this.name].push) {
+                        o[this.name] = [o[this.name]];
+                    }
+                    o[this.name].push(this.value || '');
+                } else {
+                    o[this.name] = this.value || '';
+                }
+            });
+            return o;
+        };
+        $.fn.extend({ zhanbh: test,demo:Demo });
+
+        $(function () {
+            //$.ajax({
+            //    type:"put",
+            //    url: "http://localhost:8090/api/TestChargingData",
+            //   // data: {id:3},
+            //    success: function (data) {
+            //        alert(data);
+            //    },
+            //    error: function () {
+            //        alert(1);
+            //    }
+            //});
+            //$("#dd").load();
+
+            $("#btn").click(function () {
+               // alert(JSON.stringify($("#form1").serializeObject()));
+                //$("input[name=NAME]").zhanbh();
+                $("#form1").demo();
+            });
+        });
+
+        function test() {
+            alert("zhanbaohua")
+        }
+        function Demo() {
+            alert("demo");
+        }
+    </script>
+</head>
+<body>
+    <form id="form1">
+        <input type="text" name="NAME" value="测试" />
+        <input type="text" name="DES" value="描述" />
+        <input type="button" id="btn" value="PUT" />
+    </form>
+</body>
+</html>

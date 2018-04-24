@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+</head>
+<body>
+    
+    <script>
+        var clientIP = '@Request.ServerVariables.Get("Remote_Addr").ToString()';
+        var serverIP = '@Request.ServerVariables.Get("Local_Addr").ToString()';
+        console.log(clientIP);
+        console.log(serverIP);
+        
+        var url = "http://ip.taobao.com/service/getIpInfo.php?ip=60.186.111.244";
+        $.get(url, function (data) {
+            console.log(JSON.stringify(data));
+        });
+        $.getJSON(url, function (json) {
+            var myprovince2 = json.data.area;
+            var mycity2 = json.data.region;
+            alert("您所在的城市是：" + myprovince2 + mycity2);
+        });
+    </script>
+</body>
+</html>

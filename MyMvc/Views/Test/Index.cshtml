@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+</head>
+<body>
+
+    <div>
+        @(new HtmlString(ViewData["str"] as string))
+    </div>
+    <button id="send" value="发送邮件">发送邮件</button>
+    <script>
+        $(function () {
+
+            $("#send").click(function () {
+                var url = "Send";
+                $.post(url, function () { });
+            });
+
+        });
+    </script>
+
+    @ViewBag.ClientIP
+    -
+    @ViewBag.ServerIP
+    -
+    @ViewBag.LanIP
+    -@Request.ServerVariables["remote_addr"]
+
+    @ViewData["data"]
+</body>
+</html>

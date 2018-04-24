@@ -1,0 +1,71 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>WebServicesDemo</title>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                type:"get",
+                url: "ServicesDemo",
+                data: {a:"3",b:"5"},
+                success: function (data) {
+                    alert(data);
+                },
+                error: function () {
+                    alert(1);
+                }
+            });
+            $("#dd").load();
+
+        });
+
+        
+        //$(function () {
+        //    $.ajax({
+        //        type: "post",
+        //        url: "http://localhost:8091/Test.asmx/HelloWorld",
+        //        dataType: "json",
+        //        contentType: "application/json",
+        //        success: function (result) {
+        //            var str = JSON.stringify(result);
+        //            var ob = JSON.parse(str);
+        //            alert(ob.d);
+        //        },
+        //        error: function (err) {
+        //            alert(2);
+        //        }
+        //    });
+        //});
+        //$(function () {
+        //    $.ajax({
+        //        type: "post",
+        //        url: "http://localhost:8091/Test.asmx/Add",
+        //        data: JSON.stringify({ a: "2", b: "5" }),
+        //        dataType: "json",
+        //        contentType: "application/json",
+        //        success: function (result) {
+        //            var str = JSON.stringify(result);
+        //            var ob = JSON.parse(str);
+        //            alert(ob.d);
+        //        },
+        //        error: function (err) {
+        //            alert(2);
+        //        }
+        //    });
+        //});
+
+    </script>
+</head>
+<body>
+    <div> 
+    </div>
+</body>
+</html>

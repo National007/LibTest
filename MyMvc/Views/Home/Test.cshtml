@@ -1,0 +1,50 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Test</title>
+</head>
+<body>
+    <a href="javascript:;" id="sendToTel">发送短信</a>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script>
+        $(function () {
+
+            var canSend;
+            $("#sendToTel").click(function () {
+                if (!canSend) return;
+                var btn = $(this);
+                var mobile = $("#txtMobile").val();
+                $.ajax({
+                    type: "POST",
+                    url: "/Ajax/SmsAddress.ashx",
+                    data: "Mobile=" + mobile + "",
+                    dataType: "text",
+                    success: function (msg) {
+                        $("#sendToTel").html("<i>发送成功</i>");
+                        var hander = setInterval(function () {
+                            if (time <= 0) {
+                                canSend = true;
+                                clearInterval(hander);
+                                btn.html("<i>发送短信</i>");
+                                btn.removeAttr("disabled");
+                            }
+                            else {
+                                canSend = false;
+                                btn.attr({ "disabled": "disabled" });
+                                btn.html("<i>" + time + "秒后可重新发送</i>");
+                            }
+                        }, 1000);
+                    }
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>
