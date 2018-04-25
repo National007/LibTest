@@ -9,38 +9,42 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>GooFlowDemo</title>
-    @*<link href="~/Scripts/GooFlow/GooFlow.css" rel="stylesheet" />
-        <script src="~/Scripts/GooFlow/child.js"></script>
-        <script src="~/Scripts/jquery-1.10.2.js"></script>
-        <script src="~/Scripts/GooFlow/GooFunc.js"></script>
-        <script src="~/Scripts/GooFlow/json2.js"></script>
-        <link href="~/Scripts/GooFlow/default.css" rel="stylesheet" />
-        <script src="~/Scripts/GooFlow/GooFlow.js"></script>*@
-    <script src="http://www.17sucai.com/static/js/jquery.qrcode.min.js"></script>
-    <link href="http://www.17sucai.com/preview/869565/2017-11-17/GooFlow/codebase/GooFlow.css" rel="stylesheet" />
-    <script src="http://www.17sucai.com/preview/869565/2017-11-17/GooFlow/demo/child.js"></script>
-    <script src="http://www.17sucai.com/preview/869565/2017-11-17/GooFlow/plugin/jquery.min.js"></script>
-    <script src="http://www.17sucai.com/preview/869565/2017-11-17/GooFlow/codebase/GooFunc.js"></script>
-    <script src="http://www.17sucai.com/preview/869565/2017-11-17/GooFlow/plugin/json2.js"></script>
-    <link href="http://www.17sucai.com/preview/869565/2017-11-17/GooFlow/demo/default.css" rel="stylesheet" />
-    <script src="http://www.17sucai.com/preview/869565/2017-11-17/GooFlow/codebase/GooFlow.js"></script>
+    <link href="~/Scripts/GooFlow/GooFlow.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/GooFlow/data.js"></script>
+    <script src="~/Scripts/GooFlow/GooFunc.js"></script>
+    <script src="~/Scripts/GooFlow/json2.js"></script>
+    <script src="~/Scripts/GooFlow/GooFlow.js"></script>
+</head>
+<body>
+    <div class="container" style="width:1218px;">
+        <div id="demo" style="margin:10px"></div>
+        <input id="submit" type="button" class="btn" value='导出结果' onclick="Export()" />
+        <input id="btm" type="button" class="btn" value='全屏显示' onclick="qp()" />
+        <textarea id="result" row="6"></textarea>
+    </div>
+    <style>
+        .GooFlow_work{
+            overflow:hidden;
+        }
+    </style>
     <script type="text/javascript">
         var property = {
-            width: 1200,
+            width: 800,
             height: 600,
-            toolBtns: ["start round", "end", "task", "node", "chat", "state", "plug", "join", "fork", "complex mix"],
+            toolBtns: ["start round", "end round", "task round", "node", "chat", "state", "plug", "join", "fork", "complex mix"],
             haveHead: true,
-            headBtns: ["new", "open", "save", "undo", "redo", "reload"],//如果haveHead=true，则定义HEAD区的按钮
+            headBtns: ["new", "open", "save", "undo", "redo", "reload"], //如果haveHead=true，则定义HEAD区的按钮
             haveTool: true,
             haveGroup: true,
             useOperStack: true
         };
         var remark = {
             cursor: "选择指针",
-            direct: "转换连线",
-            start: "开始结点",
-            "end round": "结束结点",
-            "task round": "任务结点",
+            direct: "结点连线",
+            start: "入口结点",
+            "end": "结束结点",
+            "task": "任务结点",
             node: "自动结点",
             chat: "决策结点",
             state: "状态结点",
@@ -63,13 +67,26 @@
         function Export() {
             document.getElementById("result").value = JSON.stringify(demo.exportData());
         }
-    </script>
-</head>
-<body>
-    <div id="demo" style="margin:10px"></div>
-    <input id="submit" type="button" value='导出结果' onclick="Export()" />
-<textarea id="result" row="6"></textarea>
-    
+        function qp() {
+            $("#demo").css({
+                height: function () {
+                    return $(document).height()-20;
+                },
+                width: function () {
+                    return $(document).width()-20;
+                },
+            });    
 
+            $(".GooFlow_work").css({
+                height: function () {
+                    return $("#demo").height()-40;
+                },
+                width: function () {
+                    return $("#demo").width()-40;
+                },
+            });    
+
+        }
+    </script>
 </body>
 </html>

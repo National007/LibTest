@@ -1148,10 +1148,16 @@
     <Content Include="Scripts\easyui-1.4.3\themes\ui-sunny\validatebox.css" />
     <Content Include="Scripts\easyui-1.4.3\themes\ui-sunny\window.css" />
     <Content Include="Scripts\GooFlow\child.js" />
+    <Content Include="Scripts\GooFlow\data.js" />
     <Content Include="Scripts\GooFlow\default.css" />
     <Content Include="Scripts\GooFlow\GooFlow.css" />
     <Content Include="Scripts\GooFlow\GooFlow.js" />
     <Content Include="Scripts\GooFlow\GooFunc.js" />
+    <Content Include="Scripts\GooFlow\img\gooflow_blank2.gif" />
+    <Content Include="Scripts\GooFlow\img\gooflow_bullet.png" />
+    <Content Include="Scripts\GooFlow\img\gooflow_icon.png" />
+    <Content Include="Scripts\GooFlow\img\GooFlow_line_oper.png" />
+    <Content Include="Scripts\GooFlow\img\gooflow_tip.png" />
     <Content Include="Scripts\GooFlow\json2.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
