@@ -12,6 +12,22 @@ namespace MyMvc.Controllers
 {
     public class TestController : Controller
     {
+
+        public ActionResult ToastrDemo()
+        {
+            return View();
+        }
+
+        public ActionResult GooFlowDemo()
+        {
+            return View();
+        }
+
+        public ActionResult LodopDemo()
+        {
+            return View();
+        }
+
         // GET: Test
         public ActionResult Index()
         {

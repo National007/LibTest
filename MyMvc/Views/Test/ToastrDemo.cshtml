@@ -1,0 +1,46 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ToastrDemo</title>
+
+    <link href="~/Scripts/toastr/toastr.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/toastr/Toastr.js"></script>
+    <script src="~/Scripts/Common.js"></script>
+</head>
+<body>
+    <button id="btn" value="打开提示框">打开提示框</button>
+    <script>
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "positionClass": "toast-top-right",
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+
+        
+
+        $(function () {
+            $("#btn").click(function () {
+                //toastr.info("我是提示框","提示信息");
+                lib.messager.info("我是提示框");
+            });
+        });
+    </script>
+</body>
+</html>

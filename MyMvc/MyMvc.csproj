@@ -196,6 +196,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Common.js" />
     <Content Include="Scripts\easyui-1.4.3\extension\jquery-easyui-datagridview\datagrid_data.json" />
     <Content Include="Scripts\easyui-1.4.3\extension\jquery-easyui-edatagrid\datagrid_data.json" />
     <Content Include="Scripts\easyui-1.4.3\extension\jquery-easyui-etree\tree_data.json" />
@@ -1146,6 +1147,12 @@
     <Content Include="Scripts\easyui-1.4.3\themes\ui-sunny\tree.css" />
     <Content Include="Scripts\easyui-1.4.3\themes\ui-sunny\validatebox.css" />
     <Content Include="Scripts\easyui-1.4.3\themes\ui-sunny\window.css" />
+    <Content Include="Scripts\GooFlow\child.js" />
+    <Content Include="Scripts\GooFlow\default.css" />
+    <Content Include="Scripts\GooFlow\GooFlow.css" />
+    <Content Include="Scripts\GooFlow\GooFlow.js" />
+    <Content Include="Scripts\GooFlow\GooFunc.js" />
+    <Content Include="Scripts\GooFlow\json2.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -1153,9 +1160,12 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Lodop\LodopFuncs.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\toastr\toastr.css" />
+    <Content Include="Scripts\toastr\Toastr.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\Home\WebServicesDemo.cshtml" />
     <Content Include="Web References\WebServiceTest\Reference.map">
@@ -1164,6 +1174,9 @@
     </Content>
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Views\Test\ToastrDemo.cshtml" />
+    <Content Include="Views\Test\GooFlowDemo.cshtml" />
+    <Content Include="Views\Test\LodopDemo.cshtml" />
     <None Include="Web References\WebServiceTest\Test.disco" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
