@@ -27,7 +27,8 @@ namespace RedisProject
         /// </summary>
         private RedisCache()
         {
-            redisServerAddress = "127.0.0.1:6379,allowAdmin=true,password=123456";
+            //redisServerAddress = "127.0.0.1:6379,allowAdmin=true,password=123456";
+            redisServerAddress = "192.168.0.66:6379,allowAdmin=true,password=123456";
             redisServerTimeoutMins = 60;
 
             if (redisServerAddress == null || string.IsNullOrWhiteSpace(redisServerAddress))

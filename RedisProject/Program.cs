@@ -13,8 +13,8 @@ namespace RedisProject
             //var a = RedisCache.Instance.GetString("name");
             //Console.WriteLine(a);
 
-            RedisCache.Instance.InsertString("key","詹宝华");
-            var a = RedisCache.Instance.GetString("key");
+            RedisCache.Instance.InsertString("dd","z");
+            var a = RedisCache.Instance.GetString("dd");
             Console.WriteLine(a);
 
             Console.ReadKey();
