@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMvc", "MyMvc\MyMvc.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisProject", "RedisProject\RedisProject.csproj", "{24F0DF24-A098-478C-8557-D196BC4B26CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{2A25959D-B8E6-4E36-BD65-C5D1FCDCFBA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{24F0DF24-A098-478C-8557-D196BC4B26CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24F0DF24-A098-478C-8557-D196BC4B26CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24F0DF24-A098-478C-8557-D196BC4B26CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A25959D-B8E6-4E36-BD65-C5D1FCDCFBA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A25959D-B8E6-4E36-BD65-C5D1FCDCFBA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A25959D-B8E6-4E36-BD65-C5D1FCDCFBA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A25959D-B8E6-4E36-BD65-C5D1FCDCFBA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
