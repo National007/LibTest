@@ -13,7 +13,7 @@ namespace RedisProject
             //var a = RedisCache.Instance.GetString("name");
             //Console.WriteLine(a);
 
-            RedisCache.Instance.InsertString("dd","z");
+            RedisCache.Instance.InsertString("dd","1234");
             var a = RedisCache.Instance.GetString("dd");
             Console.WriteLine(a);
 
