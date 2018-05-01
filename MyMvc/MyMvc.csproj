@@ -104,10 +104,6 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <Private>True</Private>
-      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -193,6 +189,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="demo.html" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -1183,6 +1180,10 @@
     <Content Include="Views\Test\ToastrDemo.cshtml" />
     <Content Include="Views\Test\GooFlowDemo.cshtml" />
     <Content Include="Views\Test\LodopDemo.cshtml" />
+    <Content Include="Scripts\Lodop\zip\CLodop_Setup_for_Win32NT.zip" />
+    <Content Include="Scripts\Lodop\zip\install_lodop32.zip" />
+    <Content Include="Scripts\Lodop\zip\install_lodop64.zip" />
+    <Content Include="Views\Test\ElementUI.cshtml" />
     <None Include="Web References\WebServiceTest\Test.disco" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

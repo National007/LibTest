@@ -28,6 +28,12 @@ namespace MyMvc.Controllers
             return View();
         }
 
+        public ActionResult ElementUI()
+        {
+            return View();
+        }
+
+
         // GET: Test
         public ActionResult Index()
         {
@@ -54,14 +60,14 @@ namespace MyMvc.Controllers
                 //}
                 using (StreamReader sr = new StreamReader(Server.MapPath("/Log/2018-03-22.log"), Encoding.GetEncoding("GB2312")))
                 {
-                    str = sr.ReadToEnd().Replace("\r\n","<br/>");  //读取文本所有内容
+                    str = sr.ReadToEnd().Replace("\r\n", "<br/>");  //读取文本所有内容
                 }
 
                 ViewBag.ClientIP = Net.GetWebClientIp();
                 ViewBag.LanIP = Net.GetLanIp();
                 ViewBag.ServerIP = Net.GetWebRemoteIp();
 
-                var data=HttpMethods.HttpGet("http://localhost:55216/Com/Disease/GetList");
+                var data = HttpMethods.HttpGet("http://localhost:55216/Com/Disease/GetList");
                 ViewData["data"] = data;
 
                 var ComData = HttpMethods.HttpPost("http://localhost:55216/Com/Disease/Del", "DiseaseId=17");
@@ -82,14 +88,14 @@ namespace MyMvc.Controllers
         public JsonResult Send()
         {
             SendEmail();
-            return Json(new {status=true,message="发送成功" },JsonRequestBehavior.DenyGet);
+            return Json(new { status = true, message = "发送成功" }, JsonRequestBehavior.DenyGet);
         }
 
         public void SendEmail()
         {
             MailMessage msg = new MailMessage();
 
-            List<string> strList = new List<string>() { "1912824749@qq.com", "3443929091@qq.com","1591025134@qq.com" };
+            List<string> strList = new List<string>() { "1912824749@qq.com", "3443929091@qq.com", "1591025134@qq.com" };
 
             //msg.To.Add("3443929091@qq.com");//收件人地址  
 
@@ -98,8 +104,8 @@ namespace MyMvc.Controllers
                 msg.To.Add(item);
             }
 
-            msg.From = new MailAddress("1591025134@qq.com","詹宝华");//发件人邮箱，名称  
-           // msg.CC.Add("1912824749@qq.com");  //抄送人
+            msg.From = new MailAddress("1591025134@qq.com", "詹宝华");//发件人邮箱，名称  
+                                                                   // msg.CC.Add("1912824749@qq.com");  //抄送人
 
             msg.Subject = "This is a test email from QQ";//邮件标题  
             msg.SubjectEncoding = Encoding.UTF8;//标题格式为UTF8  
