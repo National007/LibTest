@@ -33,6 +33,12 @@ namespace MyMvc.Controllers
             return View();
         }
 
+        public ActionResult Radio()
+        {
+            return View();
+        }
+
+
 
         // GET: Test
         public ActionResult Index()

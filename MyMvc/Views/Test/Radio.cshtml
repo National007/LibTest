@@ -8,28 +8,29 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>ElementUI</title>
+    <title>Radio</title>
     <!-- import CSS -->
     <link href="~/Scripts/ElementUI/index.css" rel="stylesheet" />
+
 </head>
 <body>
-    <div id="app">
-        <el-button @Html.Raw("@click=\"visible=true\"")>Button</el-button>
-        <el-dialog :visible.sync="visible" title="Hello world">
-            <p>Try Element</p>
-        </el-dialog>
-    </div>
+    <template>
+        <el-radio v-model="radio" label="1">备选项</el-radio>
+        <el-radio v-model="radio" label="2">备选项</el-radio>
+    </template>
     <!-- import Vue before Element -->
     <script src="~/Scripts/ElementUI/vue.js"></script>
     <!-- import JavaScript -->
     <script src="~/Scripts/ElementUI/index.js"></script>
     <script>
-    new Vue({
-        el: '#app',
-        data: function () {
-            return { visible: false }
+  @*@(@"export default {
+    data() {
+            return {
+            radio:
+                '1'
+                };
         }
-    })
+    }")*@
     </script>
 </body>
 </html>

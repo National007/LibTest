@@ -189,7 +189,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="demo.html" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -210,6 +209,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="Scripts\ElementUI\fonts\element-icons.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\easyui-1.4.3\changelog.txt" />
     <Content Include="Scripts\easyui-1.4.3\datagrid-detailview.js" />
@@ -1144,6 +1144,9 @@
     <Content Include="Scripts\easyui-1.4.3\themes\ui-sunny\tree.css" />
     <Content Include="Scripts\easyui-1.4.3\themes\ui-sunny\validatebox.css" />
     <Content Include="Scripts\easyui-1.4.3\themes\ui-sunny\window.css" />
+    <Content Include="Scripts\ElementUI\index.css" />
+    <Content Include="Scripts\ElementUI\index.js" />
+    <Content Include="Scripts\ElementUI\vue.js" />
     <Content Include="Scripts\GooFlow\child.js" />
     <Content Include="Scripts\GooFlow\data.js" />
     <Content Include="Scripts\GooFlow\default.css" />
@@ -1184,6 +1187,7 @@
     <Content Include="Scripts\Lodop\zip\install_lodop32.zip" />
     <Content Include="Scripts\Lodop\zip\install_lodop64.zip" />
     <Content Include="Views\Test\ElementUI.cshtml" />
+    <Content Include="Views\Test\Radio.cshtml" />
     <None Include="Web References\WebServiceTest\Test.disco" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
