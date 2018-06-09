@@ -26,24 +26,26 @@
             });
             return o;
         };
-        $.fn.extend({ zhanbh: test,demo:Demo });
+        $.fn.extend({ zhanbh: test, demo: Demo });
 
         $(function () {
-            //$.ajax({
-            //    type:"put",
-            //    url: "http://localhost:8090/api/TestChargingData",
-            //   // data: {id:3},
-            //    success: function (data) {
-            //        alert(data);
-            //    },
-            //    error: function () {
-            //        alert(1);
-            //    }
-            //});
+            $.ajax({
+                type: "get",
+                url: "http://localhost:8092/api/Default/GetPerson",
+                data: {},
+                success: function (res) {
+                    for (var i = 0; i < res.length; i++) {
+                        alert(res[i].name);
+                    }
+                },
+                error: function () {
+                    alert(1);
+                }
+            });
             //$("#dd").load();
 
             $("#btn").click(function () {
-               // alert(JSON.stringify($("#form1").serializeObject()));
+                // alert(JSON.stringify($("#form1").serializeObject()));
                 //$("input[name=NAME]").zhanbh();
                 $("#form1").demo();
             });

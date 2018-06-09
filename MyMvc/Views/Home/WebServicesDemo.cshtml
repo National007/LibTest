@@ -12,60 +12,86 @@
     <script src="~/Scripts/jquery-1.10.2.js"></script>
     <script>
         $(function () {
+            //$.ajax({
+            //    type:"get",
+            //    url: "ServicesDemo",
+            //    data: {a:"3",b:"5"},
+            //    success: function (data) {
+            //        alert(data);
+            //    },
+            //    error: function () {
+            //        alert(1);
+            //    }
+            //});
+            //$("#dd").load();
+            //$.ajax({
+            //    type: "get", //访问WebService使用Post方式请求
+            //    url: "http://localhost:8091/Test.asmx/GetPersonList", //调用WebService
+            //    data: {}, //Email参数
+            //    dataType: 'json',
+            //    success: function (res) { //回调函数，result，返回值
+            //        alert(1);
+            //    }
+            //});
+
             $.ajax({
-                type:"get",
-                url: "ServicesDemo",
-                data: {a:"3",b:"5"},
-                success: function (data) {
-                    alert(data);
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                url: "http://localhost:8091/Test.asmx/GetPersonList",
+                dataType: "json",  
+                data: {},
+                success: function (res) {
+                    alert(res.d.length);
+                    for (var i = 0; i < res.d.length; i++) {
+                        alert(res.d[i].name);
+                    }
                 },
-                error: function () {
-                    alert(1);
+                error: function (XMLHttpRequest, textStatus, errorThrown) { 
+                    alert(errorThrown + ':' + textStatus); // 错误处理 
                 }
             });
-            $("#dd").load();
 
-        });
+            });
 
-        
-        //$(function () {
-        //    $.ajax({
-        //        type: "post",
-        //        url: "http://localhost:8091/Test.asmx/HelloWorld",
-        //        dataType: "json",
-        //        contentType: "application/json",
-        //        success: function (result) {
-        //            var str = JSON.stringify(result);
-        //            var ob = JSON.parse(str);
-        //            alert(ob.d);
-        //        },
-        //        error: function (err) {
-        //            alert(2);
-        //        }
-        //    });
-        //});
-        //$(function () {
-        //    $.ajax({
-        //        type: "post",
-        //        url: "http://localhost:8091/Test.asmx/Add",
-        //        data: JSON.stringify({ a: "2", b: "5" }),
-        //        dataType: "json",
-        //        contentType: "application/json",
-        //        success: function (result) {
-        //            var str = JSON.stringify(result);
-        //            var ob = JSON.parse(str);
-        //            alert(ob.d);
-        //        },
-        //        error: function (err) {
-        //            alert(2);
-        //        }
-        //    });
-        //});
+
+            //$(function () {
+            //    $.ajax({
+            //        type: "post",
+            //        url: "http://localhost:8091/Test.asmx/HelloWorld",
+            //        dataType: "json",
+            //        contentType: "application/json",
+            //        success: function (result) {
+            //            var str = JSON.stringify(result);
+            //            var ob = JSON.parse(str);
+            //            alert(ob.d);
+            //        },
+            //        error: function (err) {
+            //            alert(2);
+            //        }
+            //    });
+            //});
+            //$(function () {
+            //    $.ajax({
+            //        type: "post",
+            //        url: "http://localhost:8091/Test.asmx/Add",
+            //        data: JSON.stringify({ a: "2", b: "5" }),
+            //        dataType: "json",
+            //        contentType: "application/json",
+            //        success: function (result) {
+            //            var str = JSON.stringify(result);
+            //            var ob = JSON.parse(str);
+            //            alert(ob.d);
+            //        },
+            //        error: function (err) {
+            //            alert(2);
+            //        }
+            //    });
+            //});
 
     </script>
 </head>
 <body>
-    <div> 
+    <div>
     </div>
 </body>
 </html>
