@@ -26,42 +26,49 @@
             });
             return o;
         };
-        $.fn.extend({ zhanbh: test, demo: Demo });
+        //$.fn.extend({ zhanbh: test, demo: Demo });
 
         $(function () {
-            $.ajax({
-                type: "get",
-                url: "http://localhost:8092/api/Default/GetPerson",
-                data: {},
-                success: function (res) {
-                    for (var i = 0; i < res.length; i++) {
-                        alert(res[i].name);
-                    }
-                },
-                error: function () {
-                    alert(1);
-                }
-            });
+            //$.ajax({
+            //    type: "get",
+            //    url: "http://localhost:8092/api/Default/GetPerson",
+            //    data: {},
+            //    success: function (res) {
+            //        for (var i = 0; i < res.length; i++) {
+            //            alert(res[i].name);
+            //        }
+            //    },
+            //    error: function () {
+            //        alert(1);
+            //    }
+            //});
             //$("#dd").load();
-
+            test.init();
             $("#btn").click(function () {
                 // alert(JSON.stringify($("#form1").serializeObject()));
                 //$("input[name=NAME]").zhanbh();
-                $("#form1").demo();
+                //$("#form1").demo();
+                //test.submit();
+                alert(test.key());
             });
         });
 
-        function test() {
-            alert("zhanbaohua")
-        }
-        function Demo() {
-            alert("demo");
-        }
+        var test = {
+            key: function () {
+               return $("#test").val();
+            },
+            init: function () {
+                alert("init");
+            },
+            submit: function () {
+                alert("submit");
+            }
+        };
     </script>
 </head>
 <body>
     <form id="form1">
-        <input type="text" name="NAME" value="测试" />
+        <input type="text" name="test" id="test" value="测试" />
         <input type="text" name="DES" value="描述" />
         <input type="button" id="btn" value="PUT" />
     </form>
