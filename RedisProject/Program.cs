@@ -8,7 +8,7 @@ namespace RedisProject
 {
     class Program
     {
-        private static string key = "test";
+        private static string key = "df";
         static void Main(string[] args)
         {
             //var a = RedisCache.Instance.GetString("name");
@@ -22,9 +22,9 @@ namespace RedisProject
              {
                  list = new List<User>()
                  {
-                     new User() {Name="詹宝华",Sex="男",age=23 },
-                     new User() {Name="测试",Sex="未知",age=11 },
-                     new User() {Name="王宝强",Sex="女" }
+                     new User() {Name="詹宝华1",Sex="男",age=23 },
+                     new User() {Name="测试2",Sex="未知",age=11 },
+                     new User() {Name="王宝强3",Sex="女" }
                  };
 
                  return list;
