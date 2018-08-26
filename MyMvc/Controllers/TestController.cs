@@ -38,6 +38,10 @@ namespace MyMvc.Controllers
             return View();
         }
 
+        public ActionResult Url(string id)
+        {
+            return View();
+        }
 
 
         // GET: Test
@@ -116,8 +120,10 @@ namespace MyMvc.Controllers
             msg.Subject = "This is a test email from QQ";//邮件标题  
             msg.SubjectEncoding = Encoding.UTF8;//标题格式为UTF8  
 
-            msg.Body = "this is body<br/>https://blog.csdn.net/qingheshijiyuan/article/details/50327795";//邮件内容  
+            msg.Body = "this is body<br/><img src=\"/Img/0.jpg\"/><br/>https://blog.csdn.net/qingheshijiyuan/article/details/50327795";//邮件内容  
             msg.BodyEncoding = Encoding.UTF8;//内容格式为UTF8  
+            msg.IsBodyHtml = true;
+            msg.Attachments.Add(new Attachment(Server.MapPath("/Img/duola.jpg")));
 
             SmtpClient client = new SmtpClient();
 

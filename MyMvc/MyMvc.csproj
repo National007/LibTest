@@ -190,6 +190,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Img\0.jpg" />
+    <Content Include="Img\duola.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Common.js" />
@@ -1188,6 +1190,7 @@
     <Content Include="Scripts\Lodop\zip\install_lodop64.zip" />
     <Content Include="Views\Test\ElementUI.cshtml" />
     <Content Include="Views\Test\Radio.cshtml" />
+    <Content Include="Views\Test\Url.cshtml" />
     <None Include="Web References\WebServiceTest\Test.disco" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

@@ -20,7 +20,6 @@ namespace RedisProject
         private IDatabase database;
 
         private static RedisCache instance;
-
         #region 单例
         /// <summary>
         /// 构造函数

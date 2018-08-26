@@ -19,6 +19,13 @@ using System.IO;
 
 namespace TestProject
 {
+    public class MenuItem {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int ParentId { get; set; }
+        public ICollection<MenuItem> ChildItems { get; set; }
+    }
+
     class Program
     {
         // 获取网页的HTML内容，根据网页的charset自动判断Encoding  
@@ -443,7 +450,34 @@ namespace TestProject
 
             //Console.WriteLine(sizeof(int));
 
+            // Console.WriteLine(RMBHelp.CmycurD("1234567890121"));
+
+            var MenuList = new List<MenuItem>()
+            {
+                new MenuItem(){Id=1,Name="菜单管理",ParentId=0 },
+                new MenuItem(){Id=2,Name="系统设置",ParentId=0 },
+                new MenuItem(){Id=3,Name="日志管理",ParentId=0 },
+                new MenuItem(){Id=4,Name="菜单列表",ParentId=1 },
+                new MenuItem(){Id=5,Name="菜单权限",ParentId=1 },
+                new MenuItem(){Id=6,Name="用户列表",ParentId=2 },
+                new MenuItem(){Id=7,Name="日志追寻",ParentId=3 },
+                new MenuItem(){Id=8,Name="日志跟踪",ParentId=3 },
+                new MenuItem(){Id=9,Name="数据字典",ParentId=2 }
+            };
+
+            MenuList.ForEach(a => Console.WriteLine($"{a.Id}\t{a.Name}\t{a.ParentId}"));
+
+            
+
             Console.ReadKey();
+        }
+
+        public List<MenuItem> GetAll(List<MenuItem> list)
+        {
+            foreach (var item in list)
+            {
+
+            }
         }
 
         /// <summary>

@@ -1,0 +1,1 @@
+redis服务，添加servicestack.redis 类库，或者StackExchange.Redis
