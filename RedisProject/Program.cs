@@ -35,15 +35,21 @@ namespace RedisProject
 
             RedisHelp redis = new RedisHelp();
             var list = new List<User>()
-            {
-                     new User() {Name="詹宝华1",Sex="男",age=23 },
-                     new User() {Name="测试2",Sex="未知",age=11 },
-                     new User() {Name="王宝强3",Sex="女" }
-            };
+             {
+                      new User() {Name="詹宝华1",Sex="男",age=23 },
+                      new User() {Name="测试2",Sex="未知",age=11 },
+                      new User() {Name="王宝强3",Sex="女" }
+             };
             redis.setValue<List<User>>("whys",list);
-
-            redis.FlushALL();
+            var whys = redis.getValue<List<User>>("whys");
+            whys.ForEach(a => Console.WriteLine($"{a.Name}\t{a.Sex}\t{a.age}"));
+            // redis.FlushALL();
             //redis.FlushDB();
+
+            redis.setValueString("test","zhanbaohua",new TimeSpan(0,0,5));
+            Console.WriteLine(redis.getValueString("test"));
+            
+
 
             Console.ReadKey();
         }

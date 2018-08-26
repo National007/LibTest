@@ -19,12 +19,22 @@ using System.IO;
 
 namespace TestProject
 {
-    public class MenuItem {
+    public class Moudel {
         public int Id { get; set; }
         public string Name { get; set; }
         public int ParentId { get; set; }
-        public ICollection<MenuItem> ChildItems { get; set; }
+
     }
+
+    public class TreeItem
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int ParentId { get; set; }
+
+        public IEnumerable<TreeItem> ChildItems { get; set; }
+    }
+
 
     class Program
     {
@@ -452,32 +462,52 @@ namespace TestProject
 
             // Console.WriteLine(RMBHelp.CmycurD("1234567890121"));
 
-            var MenuList = new List<MenuItem>()
+            var MoudelList = new List<Moudel>()
             {
-                new MenuItem(){Id=1,Name="菜单管理",ParentId=0 },
-                new MenuItem(){Id=2,Name="系统设置",ParentId=0 },
-                new MenuItem(){Id=3,Name="日志管理",ParentId=0 },
-                new MenuItem(){Id=4,Name="菜单列表",ParentId=1 },
-                new MenuItem(){Id=5,Name="菜单权限",ParentId=1 },
-                new MenuItem(){Id=6,Name="用户列表",ParentId=2 },
-                new MenuItem(){Id=7,Name="日志追寻",ParentId=3 },
-                new MenuItem(){Id=8,Name="日志跟踪",ParentId=3 },
-                new MenuItem(){Id=9,Name="数据字典",ParentId=2 }
+                new Moudel(){Id=1,Name="菜单管理",ParentId=0 },
+                new Moudel(){Id=2,Name="系统设置",ParentId=0 },
+                new Moudel(){Id=3,Name="日志管理",ParentId=0 },
+                new Moudel(){Id=4,Name="菜单列表",ParentId=1 },
+                new Moudel(){Id=5,Name="菜单权限",ParentId=1 },
+                new Moudel(){Id=6,Name="用户列表",ParentId=2 },
+                new Moudel(){Id=7,Name="日志追寻",ParentId=3 },
+                new Moudel(){Id=8,Name="日志跟踪",ParentId=3 },
+                new Moudel(){Id=9,Name="数据字典",ParentId=2 }
             };
 
-            MenuList.ForEach(a => Console.WriteLine($"{a.Id}\t{a.Name}\t{a.ParentId}"));
-
+            //MoudelList.ForEach(a => Console.WriteLine($"{a.Id}\t{a.Name}\t{a.ParentId}"));
+            var treeItem = GetAll(MoudelList);
+            Console.WriteLine(Tostring(treeItem));
             
 
             Console.ReadKey();
         }
 
-        public List<MenuItem> GetAll(List<MenuItem> list)
+        public static List<TreeItem> GetAll(List<Moudel> list)
         {
-            foreach (var item in list)
+            var result = list.Where(m=>m.ParentId==0).Select(s=>
             {
+                TreeItem tree = new TreeItem();
+                tree.Id = s.Id;
+                tree.Name = s.Name;
+                tree.ParentId = s.ParentId;
+                tree.ChildItems = list.Where(p => p.ParentId == s.Id).Select(o =>
+                {
+                    TreeItem childtree = new TreeItem();
+                    childtree.Id = o.Id;
+                    childtree.Name = o.Name;
+                    childtree.ParentId = o.ParentId;
+                    return childtree;
+                }).ToList();
+                return tree;
+            }).ToList();
 
-            }
+            return result;
+        }
+
+        public static string Tostring(object value)
+        {
+            return JsonConvert.SerializeObject(value);
         }
 
         /// <summary>
