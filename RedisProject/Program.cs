@@ -42,11 +42,20 @@ namespace RedisProject
              };
             redis.setValue<List<User>>("whys",list);
             var whys = redis.getValue<List<User>>("whys");
-            whys.ForEach(a => Console.WriteLine($"{a.Name}\t{a.Sex}\t{a.age}"));
+            if (whys != null && whys.Count > 0)
+            {
+                whys.ForEach(f=>Console.WriteLine($"{f.Name}\t{f.Sex}\t{f.age}"));
+            }
+            else
+            {
+                list.ForEach(f => Console.WriteLine($"{f.Name}\t{f.Sex}\t{f.age}"));
+            }
+
+            //whys.ForEach(a => Console.WriteLine($"{a.Name}\t{a.Sex}\t{a.age}"));
             // redis.FlushALL();
             //redis.FlushDB();
 
-            redis.setValueString("test","zhanbaohua",new TimeSpan(0,0,5));
+            //redis.setValueString("test","zhanbaohua",new TimeSpan(0,0,5));
             Console.WriteLine(redis.getValueString("test"));
             
 
