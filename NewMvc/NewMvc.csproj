@@ -50,6 +50,9 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -158,8 +161,19 @@
     <Compile Include="Job\EmailJob.cs" />
     <Compile Include="Job\EmailJobScheduler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\HttpHelp.cs" />
     <Compile Include="Tool\HttpMethods.cs" />
     <Compile Include="Tool\Net.cs" />
+    <Compile Include="Web References\TestService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -1126,6 +1140,10 @@
     <Content Include="Scripts\easyui-1.4.3\extension\jquery-easyui-rtl\datagrid_data1.json" />
     <Content Include="Scripts\easyui-1.4.3\extension\jquery-easyui-rtl\tree_data1.json" />
     <Content Include="Scripts\ElementUI\fonts\element-icons.woff" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Common.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -1148,7 +1166,14 @@
     <Content Include="Scripts\toastr\toastr.css" />
     <Content Include="Scripts\toastr\Toastr.js" />
     <None Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web References\TestService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\TestService\testdemo.disco" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1169,6 +1194,7 @@
     <Content Include="Views\Test\Index.cshtml" />
     <Content Include="Views\Test\LodopDemo.cshtml" />
     <Content Include="Views\Test\ToastrDemo.cshtml" />
+    <None Include="Web References\TestService\testdemo.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1179,7 +1205,26 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Repos\LibTest\Lib\Lib.csproj">
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:8091/Demo/testdemo.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\TestService\</RelPath>
+      <UpdateFromURL>http://localhost:8091/Demo/testdemo.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>NewMvc_TestService_TestDemo</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lib\Lib.csproj">
       <Project>{8c631e33-844f-48ac-819d-64739b1d50b4}</Project>
       <Name>Lib</Name>
     </ProjectReference>

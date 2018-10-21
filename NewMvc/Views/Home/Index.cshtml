@@ -12,22 +12,33 @@
     <script src="~/Scripts/jquery-1.10.2.js"></script>
 </head>
 <body>
-    
-    <script>
-        var clientIP = '@Request.ServerVariables.Get("Remote_Addr").ToString()';
-        var serverIP = '@Request.ServerVariables.Get("Local_Addr").ToString()';
-        console.log(clientIP);
-        console.log(serverIP);
-        
-        var url = "http://ip.taobao.com/service/getIpInfo.php?ip=60.186.111.244";
-        $.get(url, function (data) {
-            console.log(JSON.stringify(data));
-        });
-        $.getJSON(url, function (json) {
-            var myprovince2 = json.data.area;
-            var mycity2 = json.data.region;
-            alert("您所在的城市是：" + myprovince2 + mycity2);
-        });
-    </script>
+    <table border="1" width="90%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:0px auto;padding:0px;border:1px solid #000">
+        <tr style="background-color:#ccc0da;height:60px;text-align:center;">
+            <td colspan="4" style="text-align:center;">" + requestor.CompNameCN + "公司" + requestor.DeptNameCN + "部门" + geelyRequestInfo.Models + "车型标准工时发布通知</td>
+        </tr>
+        <tr style="height:40px;">
+            <td style="width:25%">发起单位及部门</td>
+            <td style="width:25%">" + requestor.CompNameCN + "" + requestor.DeptNameCN + "</td>
+            <td style="width:25%">提交人</td>
+            <td style="width:25%">" + requestor.NameCN + "</td>
+        </tr>
+    </table>
+
+    @*<script>
+            var clientIP = '@Request.ServerVariables.Get("Remote_Addr").ToString()';
+            var serverIP = '@Request.ServerVariables.Get("Local_Addr").ToString()';
+            console.log(clientIP);
+            console.log(serverIP);
+
+            var url = "http://ip.taobao.com/service/getIpInfo.php?ip=60.186.111.244";
+            $.get(url, function (data) {
+                console.log(JSON.stringify(data));
+            });
+            $.getJSON(url, function (json) {
+                var myprovince2 = json.data.area;
+                var mycity2 = json.data.region;
+                alert("您所在的城市是：" + myprovince2 + mycity2);
+            });
+        </script>*@
 </body>
 </html>

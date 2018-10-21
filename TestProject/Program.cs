@@ -462,22 +462,24 @@ namespace TestProject
 
             // Console.WriteLine(RMBHelp.CmycurD("1234567890121"));
 
-            var MoudelList = new List<Moudel>()
-            {
-                new Moudel(){Id=1,Name="菜单管理",ParentId=0 },
-                new Moudel(){Id=2,Name="系统设置",ParentId=0 },
-                new Moudel(){Id=3,Name="日志管理",ParentId=0 },
-                new Moudel(){Id=4,Name="菜单列表",ParentId=1 },
-                new Moudel(){Id=5,Name="菜单权限",ParentId=1 },
-                new Moudel(){Id=6,Name="用户列表",ParentId=2 },
-                new Moudel(){Id=7,Name="日志追寻",ParentId=3 },
-                new Moudel(){Id=8,Name="日志跟踪",ParentId=3 },
-                new Moudel(){Id=9,Name="数据字典",ParentId=2 }
-            };
+            //var MoudelList = new List<Moudel>()
+            //{
+            //    new Moudel(){Id=1,Name="菜单管理",ParentId=0 },
+            //    new Moudel(){Id=2,Name="系统设置",ParentId=0 },
+            //    new Moudel(){Id=3,Name="日志管理",ParentId=0 },
+            //    new Moudel(){Id=4,Name="菜单列表",ParentId=1 },
+            //    new Moudel(){Id=5,Name="菜单权限",ParentId=1 },
+            //    new Moudel(){Id=6,Name="用户列表",ParentId=2 },
+            //    new Moudel(){Id=7,Name="日志追寻",ParentId=3 },
+            //    new Moudel(){Id=8,Name="日志跟踪",ParentId=3 },
+            //    new Moudel(){Id=9,Name="数据字典",ParentId=2 }
+            //};
 
-            //MoudelList.ForEach(a => Console.WriteLine($"{a.Id}\t{a.Name}\t{a.ParentId}"));
-            var treeItem = GetAll(MoudelList);
-            Console.WriteLine(Tostring(treeItem));
+            ////MoudelList.ForEach(a => Console.WriteLine($"{a.Id}\t{a.Name}\t{a.ParentId}"));
+            //var treeItem = GetAll(MoudelList);
+            //Console.WriteLine(Tostring(treeItem));
+            WcfService1.Service1 service = new WcfService1.Service1();
+            var l = service.GetAll();
             
 
             Console.ReadKey();

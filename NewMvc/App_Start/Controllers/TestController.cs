@@ -7,8 +7,6 @@ using System.Net.Mail;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
-using NewMvc.Tool;
-using Newtonsoft.Json;
 
 namespace MyMvc.Controllers
 {
@@ -107,7 +105,7 @@ namespace MyMvc.Controllers
         {
             MailMessage msg = new MailMessage();
 
-            List<string> strList = new List<string>() { "1912824749@qq.com", "3443929091@qq.com", "1591025134@qq.com", "zhanbaohua@hydsoft.com" };
+            List<string> strList = new List<string>() { "1912824749@qq.com", "3443929091@qq.com", "1591025134@qq.com" };
 
             //msg.To.Add("3443929091@qq.com");//收件人地址  
 
@@ -115,32 +113,14 @@ namespace MyMvc.Controllers
             {
                 msg.To.Add(item);
             }
-            var company = "江西铭信";
 
             msg.From = new MailAddress("1591025134@qq.com", "詹宝华");//发件人邮箱，名称  
-            msg.CC.Add("1912824749@qq.com");  //抄送人
+                                                                   // msg.CC.Add("1912824749@qq.com");  //抄送人
 
             msg.Subject = "This is a test email from QQ";//邮件标题  
             msg.SubjectEncoding = Encoding.UTF8;//标题格式为UTF8  
-            string str = string.Format($"{company}");
-            StringBuilder sb = new StringBuilder();
-            sb.Append("<table border=\"1\"  width=\"90%\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse;margin:0px auto;border:1px solid #000\">");
 
-            sb.Append("<tr style=\"background-color:#ccc0da;height:60px;text-align:center;\">");
-            sb.Append("<td colspan=\"4\" style=\"text-align:center;\">" + company + "公司" + strList[0] + "部门" + strList[0] + "车型标准工时发布通知<a href=\"https://blog.csdn.net/qingheshijiyuan/article/details/50327795\">查看详情</a></td>");
-            sb.Append("</tr>");
-
-            sb.Append("<tr style=\"height:40px;\">");
-            sb.Append("<td style=\"width:25%\">发起单位及部门</td><td style=\"width:25%\">" + strList[0] + "" + strList[0] + "</td><td style=\"width:25%\">提交人</td><td style=\"width:25%\">" + strList[1] + "</td>");
-            sb.Append("</tr>");
-
-            sb.Append("<tr style=\"height:40px;\">");
-            sb.Append("<td style=\"width:25%\">整车直产纯作业工时(DOST)变量(s)</td><td style=\"width:25%\">" + strList[0] + "</td><td style=\"width:25%\">整车标准工时变量(s)</td><td style=\"width:25%\">" + strList[1] + "</td>");
-            sb.Append("</tr>");
-
-            sb.Append("</table>");
-            msg.Body = sb.ToString();
-            //msg.Body = "this is body<br/><img src=\"/Img/0.jpg\"/><br/>https://blog.csdn.net/qingheshijiyuan/article/details/50327795";//邮件内容  
+            msg.Body = "this is body<br/><img src=\"/Img/0.jpg\"/><br/>https://blog.csdn.net/qingheshijiyuan/article/details/50327795";//邮件内容  
             msg.BodyEncoding = Encoding.UTF8;//内容格式为UTF8  
             msg.IsBodyHtml = true;
             msg.Attachments.Add(new Attachment(Server.MapPath("/Img/duola.jpg")));
@@ -157,16 +137,6 @@ namespace MyMvc.Controllers
             client.Send(msg);//发送邮件  
 
         }
-
-        public ActionResult TestHttp()
-        {
-            var url = "http://localhost:8091/Demo/testdemo.asmx";
-            var str = HttpHelp.HttpPostWebService(url, "Add","a=3&b=5");
-
-
-            return Json(str);
-        }
-        
 
     }
 }

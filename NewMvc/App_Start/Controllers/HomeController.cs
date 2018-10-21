@@ -20,16 +20,16 @@ namespace NewMvc.Controllers
 
         public ActionResult WebServicesDemo()
         {
-            var i = ServicesDemo("3","5");
             return View();
         }
-        public int ServicesDemo(string a, string b)
-        {
-            TestService.TestDemo webservice = new TestService.TestDemo();
-            int sum = webservice.Sum(a, b);
-            return sum;
-        }
-        
+        //public ActionResult ServicesDemo(string a, string b)
+        //{
+        //    WebServiceTest.Test webservice = new WebServiceTest.Test();
+        //    int sum = webservice.Sum(a, b);
+        //    return Json(sum, JsonRequestBehavior.AllowGet);
+        //}
+
+
 
         public ActionResult List(string id)
         {
